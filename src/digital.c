@@ -28,6 +28,7 @@ struct digital_output_s {
 struct digital_input_s {
     uint8_t gpio;
     uint8_t bit;
+    bool last_state;
     bool allocated;
 };
 /* === Private variable declarations =========================================================== */
@@ -108,6 +109,7 @@ digital_input_t DigitalInputCreate(uint8_t gpio, uint8_t bit){
     if(input){
         input->gpio = gpio;
         input ->bit = bit;
+        input ->last_state = false;
         Chip_GPIO_SetPinDIR(LPC_GPIO_PORT, input->gpio, input ->bit, false);
     }
     return input;
@@ -119,6 +121,22 @@ bool DigitalInputGetState(digital_input_t input){
         state = (Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, input->gpio, input->bit) == 0);
     }
     return state;
+}
+
+bool DigitalInputHasChanged(digital_input_t input){
+    bool state = DigitalInputGetState(input);
+    if(state != input->last_state){
+        input->last_state = state;
+        return true;
+    } 
+    else return false;
+}
+
+bool DigitalInputHasActivated(digital_input_t input){
+    bool state = DigitalInputGetState(input);
+    bool last_state = DigitalInputHasChanged(input);
+    if(last_state == false && state == true) return true;
+    else return false;
 }
 
 /* === End of documentation ==================================================================== */
