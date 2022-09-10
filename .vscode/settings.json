@@ -3,7 +3,8 @@
         "*.excalidraw": "json",
         "*.excalidrawlib": "json",
         "stdbool.h": "c",
-        "digital.h": "c"
+        "digital.h": "c",
+        "chip.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
