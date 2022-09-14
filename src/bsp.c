@@ -1,9 +1,42 @@
+/** @file bsp.c
+ ** | RV | YYYY.MM.DD | Author      | Changes description                     |
+ ** |----|------------|-------------|-----------------------------------------|
+ ** |  1 | 2022.09.14 | fedeiz      | V1.0
+ 
+/** \brief CIAA model board layer
+ ** In this file we create an abstract layer to represent the model board we use in our project
+ ** 
+ **
+
+ ** @{ */
+
+/* === Headers files inclusions =============================================================== */
+
 #include "bsp.h"
 #include "chip.h"
 
+/* === Macros definitions ====================================================================== */
 
+/* === Private data type declarations ========================================================== */
+
+/* === Private variable declarations =========================================================== */
+
+/* === Private function declarations =========================================================== */
+
+/* === Public variable definitions ============================================================= */
+
+/* === Private variable definitions ============================================================ */
+
+/* === Private function implementation ========================================================= */
+
+/* === Public function implementation ========================================================= */
 
 board_t BoardCreate(void){
+
+/**
+ * In this function configure the inputs and outputs mode for this kind of board and create the inputs and outputs ports
+ * whith DigitalOutputCreate and DigitalInputCreate. We return the pointer to its data board
+*/
 
     static struct board_s board;
     
@@ -59,3 +92,7 @@ board_t BoardCreate(void){
 
     return &board;
 }
+
+/* === End of documentation ==================================================================== */
+
+/** @} End of module definition for doxygen */

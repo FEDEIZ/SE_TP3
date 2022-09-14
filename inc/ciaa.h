@@ -1,4 +1,28 @@
-#define LED_R_PORT 2
+#ifndef CIAA_H
+#define CIAA_H
+
+/** @file ciaa.h.h
+ ** | RV | YYYY.MM.DD | Author      | Changes description                     |
+ ** |----|------------|-------------|-----------------------------------------|
+ ** |  1 | 2022.09.14 | fedeiz      | V1.0
+
+/** \brief Definition for this specific ciaa board model in our project
+ **
+ ** Just contain definitions values
+ **
+ ** @{ */
+
+/* === Headers files inclusions ================================================================ */
+
+/* === Cabecera C++ ============================================================================ */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* === Public macros definitions =============================================================== */
+ 
+ #define LED_R_PORT 2
 #define LED_R_PIN 0
 #define LED_R_FUNC SCU_MODE_FUNC4
 #define LED_R_GPIO 5
@@ -57,3 +81,20 @@
 #define TEC_4_FUNC SCU_MODE_FUNC0
 #define TEC_4_GPIO 1
 #define TEC_4_BIT 9
+
+/* === Public data type declarations =========================================================== */
+ 
+/* === Public variable declarations ============================================================ */
+
+/* === Public function declarations ============================================================ */
+
+/* === End of documentation ==================================================================== */
+
+#ifdef __cplusplus
+}
+#endif
+
+/** @} End of module definition for doxygen */
+
+#endif   /* CIAA_H */
+

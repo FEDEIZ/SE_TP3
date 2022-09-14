@@ -1,13 +1,20 @@
-/** \brief Simple sample of use LPC HAL gpio functions
+/** @file main.c
+
+/** \brief Introducing sample to the use of ciaa board with a simple project
+ **   
+ **  This sample is part of the EITI course called Embedded Systems. This program turn on and off 
+ **  different leds of the boards with different buttons
+
+ ** | RV | YYYY.MM.DD | Author      | Changes description                     |
+ ** |----|------------|-------------|-----------------------------------------|
+ ** |  1 | 2022.09.14 | fedeiz      | V1.0
+ ** 
  **
- ** \addtogroup samples Sample projects
- ** \brief Sample projects to use as a starting point
- ** @{ */
 
 /* === Headers files inclusions =============================================================== */
 
 
-#include "bsp.h"
+#include "bsp.h" /** \brief Here we include the headers to use a HAL module for this board */
 #include <stdbool.h>
 
 /* === Macros definitions ====================================================================== */
@@ -27,7 +34,13 @@
 /* === Private function implementation ========================================================= */
 
 /* === Public function implementation ========================================================= */
-
+/**
+ * This program has four different linking leds. 
+ * 1) The blue led remain on while the first button is pressed
+ * 2) The red led toggle whith consecutive second button event 
+ * 3) The yellow led can be turn on with a third button and off with the fourth button
+ * 4) The green led blink beetween 5 cicles program 
+ */
 int main(void) {
 
     int divisor  = 0;

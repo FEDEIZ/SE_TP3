@@ -1,13 +1,20 @@
+#ifndef DIGITAL_H
+#define DIGITAL_H
 
-#ifndef MAIN_H
-#define MAIN_H
+/** @file digital.h
+ ** \brief Header module with digital functions
+ **
+ ** | RV | YYYY.MM.DD | Author      | Changes description              |
+ ** |----|------------|-------------|----------------------------------|
+ ** |  1 | 2022.09.14 | fedeiz      | V1.0                             |
+ ** 
+ **
 
-/** \brief Brief description of the file
+/** \brief This file contains the headers for digital.c file
  **
- ** Full file description
- **
- ** \addtogroup name Module denomination
- ** \brief Brief description of the module
+ ** Here we declarate the public function like DigitalOuputCreate, DigitalOutputActivate, DigitalOutputDeactivate,
+ ** DigitalOutputToggle, DigitalInputCreate, DigitalInputGetState, DigitalInputHasChanged and DigitalInputHasActivated
+
  ** @{ */
 
 /* === Headers files inclusions ================================================================ */
@@ -22,6 +29,9 @@ extern "C" {
 /* === Public macros definitions =============================================================== */
  
 /* === Public data type declarations =========================================================== */
+/**
+ * Here we declarate the struct we use in digital.c to save the state of inputs and outputs signals
+ */
 typedef struct digital_output_s * digital_output_t;
 
 typedef struct digital_input_s * digital_input_t;
@@ -47,4 +57,4 @@ bool DigitalInputHasActivated(digital_input_t input);
 
 /** @} End of module definition for doxygen */
 
-#endif   /* MAIN_H */
+#endif   /* DIGITAL_H */
