@@ -4,7 +4,8 @@
         "*.excalidrawlib": "json",
         "stdbool.h": "c",
         "digital.h": "c",
-        "chip.h": "c"
+        "chip.h": "c",
+        "bsp.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
